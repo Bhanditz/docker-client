@@ -16,9 +16,9 @@ class Docker::Resource::Container < Docker::Resource::Base
     @connection.get('/containers/ps', options).body_as_json
   end
   
-  def create(command, image = 'base', options = {})
+  def create(command, images = ['base'], options = {})
     command = [command] if command.is_a?(String)
-    body = {'Cmd' => command, 'Image' => image}
+    body = {'Cmd' => command, 'Images' => images}
     body = options.merge(body)
     json_body = MultiJson.dump(body)
     
