@@ -1,5 +1,3 @@
-require 'active_support/core_ext/numeric'
-
 require 'docker/version'
 require 'docker/api'
 require 'docker/resource'
